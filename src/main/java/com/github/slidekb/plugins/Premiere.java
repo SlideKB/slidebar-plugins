@@ -116,7 +116,6 @@ public class Premiere implements SlideBarPlugin {
         cfg = ConfigFactory.create(ThisConfig.class);
         attachedProcesses = new ArrayList<>(Arrays.asList(cfg.processList()));
 
-        hkm.addKey("Space");
         System.out.println("running in " + System.getProperty("sun.arch.data.model"));
         lib = (AutoHotKeyDll) Native.loadLibrary("AutoHotkey.dll", AutoHotKeyDll.class);
         lib.ahktextdll(new WString(""), new WString(""), new WString(""));
@@ -252,6 +251,8 @@ public class Premiere implements SlideBarPlugin {
     @Override
     public void setHotKeyManager(com.github.slidekb.api.HotKeyManager hotKeyManager) {
         this.hkm = hotKeyManager;
+
+        hkm.addKey("Space");
     }
 
     @Override
