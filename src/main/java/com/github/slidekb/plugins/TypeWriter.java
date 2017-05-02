@@ -186,4 +186,14 @@ public class TypeWriter implements SlideBarPlugin {
     public void detachFromProcess(String processName) {
         attachedProcesses.remove(processName);
     }
+
+    @Override
+    public String currentlyUsedSlider() {
+        return null;
+    }
+
+    @Override
+    public boolean usesProcessNames() {
+        return true;
+    }
 }
